@@ -1,0 +1,14 @@
+Fedora specific, no need to send upstream.
+
+diff -up javasqlite-20090430/SQLite/Database.java~ javasqlite-20090430/SQLite/Database.java
+--- javasqlite-20090430/SQLite/Database.java~	2009-04-08 11:53:00.000000000 +0300
++++ javasqlite-20090430/SQLite/Database.java	2009-05-01 00:59:29.000000000 +0300
+@@ -868,7 +868,7 @@ public class Database {
+ 	try {
+ 	    String path = System.getProperty("SQLite.library.path");
+ 	    if (path == null || path.length() == 0) {
+-		System.loadLibrary("sqlite_jni");
++		System.load("@JNIPATH@/" + System.mapLibraryName("sqlite_jni"));
+ 	    } else {
+ 		try {
+ 		    java.lang.reflect.Method mapLibraryName;

@@ -28,9 +28,7 @@ SQLite API.
 %package javadoc
 Summary:	API documentation for %{name}
 Group:		Documentation
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description javadoc
 API documentation for %{name}.
